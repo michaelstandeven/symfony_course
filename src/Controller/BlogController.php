@@ -15,7 +15,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
-class BlogController extends AbstractController
+class BlogController extends Controller
 {
     /**
      * @var Greeting
@@ -37,6 +37,7 @@ class BlogController extends AbstractController
      */
     public function index(Request $request)
     {
+        $this->get('app.greeting');
         return $this->render("base.html.twig", ['message' => $this->greeting->greet(
             $request->get('name')
         )]);
