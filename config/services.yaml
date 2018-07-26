@@ -27,6 +27,10 @@ services:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
 
+    App\Service\Greeting:
+      arguments:
+        $message: 'Hello from service'
+
     app.greeting:
         public: true
         alias: App\Service\Greeting
