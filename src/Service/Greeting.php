@@ -21,9 +21,9 @@ class Greeting
         #$this->message = $message;
     }
 
-    public function greet(): string
+    public function greet()
     {
-        $this->logger->info("Greeted");
-        return "{$this->message}";
+        #$this->logger->info("Greeted");
+        return "Greeted";
     }
 }
