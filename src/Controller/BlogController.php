@@ -23,17 +23,12 @@ use Symfony\Component\Routing\Annotation\Route;
 class BlogController
 {
     /**
-     * @var Greeting
-     */
-    private $greeting;
-    /**
      * @var \Twig_Environment
      */
     private $twig;
 
-    public function __construct(Greeting $greeting, \Twig_Environment $twig)
+    public function __construct(\Twig_Environment $twig)
     {
-        $this->greeting = $greeting;
         $this->twig = $twig;
     }
 
@@ -42,9 +37,7 @@ class BlogController
      */
     public function index($name)
     {
-        $html = $this->twig->render("base.html.twig", ['message' => $this->greeting->greet(
-            $name
-        )]);
+        $html = $this->twig->render("base.html.twig");
 
         return new Response($html);
     }
@@ -58,7 +51,7 @@ class BlogController
     }
 
     /**
-     * @Route("/show{id}", name="blog_show")
+     * @Route("/show/{id}", name="blog_show")
      */
     public function show($id)
     {
