@@ -5,6 +5,7 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: 'en'
+    hello_message: 'Hello from service'
 
 services:
     # default configuration for services in *this* file
@@ -29,7 +30,7 @@ services:
 
     App\Service\Greeting:
       arguments:
-        $message: 'Hello from service'
+        $message: '%hello_message%'
 
     app.greeting:
         public: true
