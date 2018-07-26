@@ -48,4 +48,20 @@ class BlogController
 
         return new Response($html);
     }
+
+    /**
+     * @Route("/add", name="blog_add")
+     */
+    public function add()
+    {
+
+    }
+
+    /**
+     * @Route("/show{id}", name="blog_show")
+     */
+    public function show($id)
+    {
+
+    }
 }
