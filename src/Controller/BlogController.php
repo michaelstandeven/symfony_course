@@ -14,23 +14,24 @@ use App\Service\VeryBadDesign;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class BlogController extends Controller
+class BlogController
 {
     /**
      * @var Greeting
      */
     private $greeting;
     /**
-     * @VerybadDesign
+     * @var \Twig_Environment
      */
-    private $badDesign;
+    private $twig;
 
-    public function __construct(Greeting $greeting, VeryBadDesign $badDesign)
+    public function __construct(Greeting $greeting, \Twig_Environment $twig)
     {
         $this->greeting = $greeting;
-        $this->badDesign = $badDesign;
+        $this->twig = $twig;
     }
 
     /**
@@ -38,9 +39,10 @@ class BlogController extends Controller
      */
     public function index(Request $request)
     {
-        $this->get('app.greeting');
-        return $this->render("base.html.twig", ['message' => $this->greeting->greet(
+        $html = $this->twig->render("base.html.twig", ['message' => $this->greeting->greet(
             $request->get('name')
         )]);
+
+        return new Response($html);
     }
 }
