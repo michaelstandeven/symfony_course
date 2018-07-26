@@ -26,10 +26,15 @@ class BlogController
      * @var \Twig_Environment
      */
     private $twig;
+    /**
+     * @var SessionInterface
+     */
+    private $session;
 
-    public function __construct(\Twig_Environment $twig)
+    public function __construct(\Twig_Environment $twig, SessionInterface $session)
     {
         $this->twig = $twig;
+        $this->session = $session;
     }
 
     /**
@@ -37,7 +42,13 @@ class BlogController
      */
     public function index($name)
     {
-        $html = $this->twig->render("base.html.twig");
+        $html = $this->twig->render(
+            'blog/index.html.twig',
+            [
+                'posts' => $this->session->get('posts')
+            ]
+        );
+
 
         return new Response($html);
     }
@@ -47,7 +58,12 @@ class BlogController
      */
     public function add()
     {
-
+        $posts = $this->session->get('posts');
+        $posts[uniqid()] = [
+            'title' => 'A random title '.rand(1, 500),
+            'text' => 'Some random text nr '.rand(1, 500),
+        ];
+        $this->session->set('posts',$posts);
     }
 
     /**
@@ -55,6 +71,20 @@ class BlogController
      */
     public function show($id)
     {
+        $posts = $this->session->get('posts');
 
+        if (!$posts || !isset($posts[$id])) {
+            throw new NotFoundHttpException('Post not found');
+        }
+
+        $html = $this->twig->render(
+            'blog/post.html.twig',
+            [
+                'id' => $id,
+                'post' => $posts[$id],
+            ]
+        );
+
+        return new Response($html);
     }
 }
