@@ -12,6 +12,7 @@ namespace App\Controller;
 use App\Service\Greeting;
 use App\Service\VeryBadDesign;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
