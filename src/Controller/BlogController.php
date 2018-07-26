@@ -26,9 +26,10 @@ class BlogController extends AbstractController
      */
     private $badDesign;
 
-    public function __construct(Greeting $greeting)
+    public function __construct(Greeting $greeting, VeryBadDesign $badDesign)
     {
         $this->greeting = $greeting;
+        $this->badDesign = $badDesign;
     }
 
     /**
