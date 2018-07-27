@@ -37,9 +37,9 @@ class BlogController
     }
 
     /**
-     * @Route("/{name}", name="blog_index")
+     * @Route("/", name="blog_index")
      */
-    public function index($name)
+    public function index()
     {
         $html = $this->twig->render(
             'blog/index.html.twig',
