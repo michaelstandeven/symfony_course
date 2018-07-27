@@ -14,7 +14,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Symfony\Component\httpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\RouterInterface;
 
 /**
  * @Route("/blog")
@@ -29,11 +31,26 @@ class BlogController
      * @var SessionInterface
      */
     private $session;
+    /**
+     * @var RouterInterface
+     */
+    private $router;
 
-    public function __construct(\Twig_Environment $twig, SessionInterface $session)
+    /**
+     * BlogController constructor.
+     * @param \Twig_Environment $twig
+     * @param SessionInterface $session
+     * @param RouterInterface $router
+     */
+    public function __construct(
+        \Twig_Environment $twig,
+        SessionInterface $session,
+        RouterInterface $router
+    )
     {
         $this->twig = $twig;
         $this->session = $session;
+        $this->router = $router;
     }
 
     /**
@@ -63,6 +80,8 @@ class BlogController
             'text' => 'Some random text nr '.rand(1, 500),
         ];
         $this->session->set('posts',$posts);
+
+        return new RedirectResponse($this->router->generate('blog_index'));
     }
 
     /**
