@@ -31,6 +31,11 @@
           <entry key="JavaScript" value="2" />
         </counts>
       </usages-collector>
+      <usages-collector id="statistics.js.language.service.starts">
+        <counts>
+          <entry key="TypeScriptServerServiceImpl" value="1" />
+        </counts>
+      </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
@@ -82,8 +87,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/node_modules/@symfony/webpack-encore/lib/WebpackConfig.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="247" column="40" selection-start-line="247" selection-start-column="40" selection-end-line="247" selection-end-column="40" />
+            <state relative-caret-position="140">
+              <caret line="238" column="5" lean-forward="true" selection-start-line="238" selection-start-column="5" selection-end-line="239" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -123,6 +128,7 @@
       <find>cleanupOutput</find>
       <find>.addEntry</find>
       <find>addEntry</find>
+      <find>bootstrap</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -284,6 +290,11 @@
               <item name="symfony_course" type="b2602c69:ProjectViewProjectNode" />
               <item name="symfony_course" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="symfony_course" type="b2602c69:ProjectViewProjectNode" />
+              <item name="symfony_course" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -331,20 +342,20 @@
       <workItem from="1532557022717" duration="17795000" />
       <workItem from="1532633452799" duration="29503000" />
       <workItem from="1532958887928" duration="60000" />
-      <workItem from="1532959153757" duration="1021000" />
+      <workItem from="1532959153757" duration="1546000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48379000" />
+    <option name="totallyTimeSpent" value="48904000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1881663" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="TypeScript" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32960895" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -660,8 +671,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/@symfony/webpack-encore/lib/WebpackConfig.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="247" column="40" selection-start-line="247" selection-start-column="40" selection-end-line="247" selection-end-column="40" />
+        <state relative-caret-position="140">
+          <caret line="238" column="5" lean-forward="true" selection-start-line="238" selection-start-column="5" selection-end-line="239" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
