@@ -76,7 +76,7 @@ class MicroPostController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->entityManager->persist($microPost);
+            //$this->entityManager->persist($microPost);
             $this->entityManager->flush();
 
             return new RedirectResponse(
