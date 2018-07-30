@@ -34,4 +34,14 @@ class MicroPostController
         ]);
         return new Response($html);
     }
+
+    /**
+     * @Route("/add", name="micro_post_add")
+     */
+    public function add()
+    {
+        return new Response(
+            $this->twig->render('micro-post/add.html.twig')
+        );
+    }
 }
