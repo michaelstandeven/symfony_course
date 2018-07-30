@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/micro-post)
+ * @Route("/micro-post")
  */
 class MicroPostController
 {
@@ -25,7 +25,7 @@ class MicroPostController
         $this->microPostRepository = $microPostRepository;
     }
     /**
-     * @Route("/", name="micro_post_index)
+     * @Route("/", name="micro_post_index")
      */
     public function index()
     {
