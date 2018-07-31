@@ -4,7 +4,7 @@ security:
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
         database_users:
-            entity: { class: App\Entity\User, property: username}
+            entity: { class: App\Entity\User, property: username }
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
@@ -12,6 +12,7 @@ security:
         main:
             anonymous: true
             pattern: ^/
+
             # activate different ways to authenticate
 
             # http_basic: ~
@@ -21,10 +22,13 @@ security:
                 check_path: security_login
                 login_path: security_login
                 csrf_token_generator: security.csrf.token_manager
-                default_targer_path: micro_post_index
+                default_target_path: micro_post_index
                 # always_use_default_target_path: false
                 # use_referer: true
                 # failure_path:
+                # username_parameter: _username
+                # password_parameter: _password
+                # csrf_parameter: _
 
             logout:
                 path: security_logout
