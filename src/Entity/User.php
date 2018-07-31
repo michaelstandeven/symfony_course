@@ -47,7 +47,8 @@ class User implements UserInterface, \Serializable
 
     /**
      * @ORM\Column(type="string", length=50)
-     * @Asser\Length(min=4, max=50)
+     * @Assert\NotBlank()
+     * @Assert\Length(min=4, max=50)
      */
     private $fullName;
 
@@ -84,6 +85,7 @@ class User implements UserInterface, \Serializable
            $this->id,
            $this->username,
            $this->password
+            #,$this->enabled
         ]);
     }
 
@@ -91,7 +93,9 @@ class User implements UserInterface, \Serializable
     {
         list($this->id,
             $this->username,
-            $this->password) = unserialize($serialized);
+            $this->password
+            #,$this->enabled
+            ) = unserialize($serialized);
     }
 
     /**
