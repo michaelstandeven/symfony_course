@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da161553-ead5-4258-9700-ec95b7e1a70c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/templates/micro-post/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/micro-post/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MicroPostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MicroPostController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,7 +33,7 @@
           <entry key="gitignore" value="1" />
           <entry key="js" value="7" />
           <entry key="json" value="2" />
-          <entry key="php" value="59" />
+          <entry key="php" value="61" />
           <entry key="twig" value="17" />
           <entry key="xlf" value="1" />
           <entry key="yaml" value="8" />
@@ -43,7 +44,7 @@
           <entry key="CSS" value="3" />
           <entry key="JSON" value="2" />
           <entry key="JavaScript" value="7" />
-          <entry key="PHP" value="59" />
+          <entry key="PHP" value="61" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="Twig" value="17" />
           <entry key="YAML" value="8" />
@@ -58,7 +59,7 @@
         <counts>
           <entry key="env" value="11" />
           <entry key="js" value="17" />
-          <entry key="php" value="6939" />
+          <entry key="php" value="7269" />
           <entry key="twig" value="1003" />
           <entry key="yaml" value="587" />
         </counts>
@@ -66,7 +67,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JavaScript" value="17" />
-          <entry key="PHP" value="6939" />
+          <entry key="PHP" value="7269" />
           <entry key="PLAIN_TEXT" value="11" />
           <entry key="Twig" value="1003" />
           <entry key="YAML" value="587" />
@@ -98,6 +99,18 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/RegisterController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+              <folding>
+                <element signature="e#34#54#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Security/MicroPostVoter.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="337">
@@ -109,11 +122,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/micro-post/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
+            <state relative-caret-position="255">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Controller/MicroPostController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="157">
+              <caret line="87" column="55" lean-forward="true" selection-start-line="87" selection-start-column="55" selection-end-line="87" selection-end-column="55" />
+              <folding>
+                <element signature="e#33#58#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -159,7 +184,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>dateTime</find>
       <find>argou</find>
       <find>kern</find>
       <find>@symfony/webpack-encore</find>
@@ -189,6 +213,7 @@
       <find>USERS</find>
       <find>autocon</find>
       <find>Micro</find>
+      <find>edi</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -218,12 +243,10 @@
         <option value="$PROJECT_DIR$/src/Form/MicroPostType.php" />
         <option value="$PROJECT_DIR$/config/packages/twig.yaml" />
         <option value="$PROJECT_DIR$/templates/micro-post/post.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/MicroPostController.php" />
         <option value="$PROJECT_DIR$/templates/security/login.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/SecurityController.php" />
         <option value="$PROJECT_DIR$/src/Form/UserType.php" />
         <option value="$PROJECT_DIR$/templates/register/register.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/RegisterController.php" />
         <option value="$PROJECT_DIR$/src/Entity/User.php" />
         <option value="$PROJECT_DIR$/templates/base.html.twig" />
         <option value="$PROJECT_DIR$/templates/micro-post/raw-post.html.twig" />
@@ -232,6 +255,8 @@
         <option value="$PROJECT_DIR$/src/Entity/MicroPost.php" />
         <option value="$PROJECT_DIR$/src/Security/MicroPostVoter.php" />
         <option value="$PROJECT_DIR$/templates/micro-post/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/RegisterController.php" />
+        <option value="$PROJECT_DIR$/src/Controller/MicroPostController.php" />
       </list>
     </option>
   </component>
@@ -379,6 +404,12 @@
               <item name="symfony_course" type="b2602c69:ProjectViewProjectNode" />
               <item name="symfony_course" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="symfony_course" type="b2602c69:ProjectViewProjectNode" />
+              <item name="symfony_course" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Security" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -432,18 +463,18 @@
       <workItem from="1532959153757" duration="30434000" />
       <workItem from="1533044600211" duration="11666000" />
       <workItem from="1533061037058" duration="1057000" />
-      <workItem from="1533062250034" duration="14751000" />
+      <workItem from="1533062250034" duration="15777000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105266000" />
+    <option name="totallyTimeSpent" value="106292000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1945629" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1945629" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -455,7 +486,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" weight="0.32925472" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49946696" visible="true" weight="0.32925472" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49946696" visible="true" weight="0.32925472" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32925472" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50053304" side_tool="true" weight="0.32925472" />
       <window_info anchor="bottom" id="TypeScript" order="12" />
@@ -697,13 +728,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/MicroPostController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="109" selection-start-line="109" selection-end-line="109" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/symfony/framework-bundle/Controller/ControllerTrait.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
@@ -727,13 +751,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Migrations/Version20180731200609.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/RegisterController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/User.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -835,8 +852,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/micro-post/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
+        <state relative-caret-position="255">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/RegisterController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+          <folding>
+            <element signature="e#34#54#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/MicroPostController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="87" column="55" lean-forward="true" selection-start-line="87" selection-start-column="55" selection-end-line="87" selection-end-column="55" />
+          <folding>
+            <element signature="e#33#58#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
