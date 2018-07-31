@@ -58,7 +58,7 @@ class User implements UserInterface, \Serializable
      */
     private $posts;
 
-    private function __construct()
+    public function __construct()
     {
         $this->posts = new ArrayCollection();
     }

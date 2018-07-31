@@ -4,6 +4,7 @@ namespace App\DataFixtures;
 
 use App\Entity\MicroPost;
 use App\Entity\User;
+use App\Entity\UserPreferences;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
@@ -22,8 +23,8 @@ class AppFixtures extends Fixture
 
     public function load(ObjectManager $manager)
     {
-        $this->loadMicroPosts($manager);
         $this->loadUsers($manager);
+        $this->loadMicroPosts($manager);
     }
 
     private function loadMicroPosts(ObjectManager $manager)
@@ -32,6 +33,7 @@ class AppFixtures extends Fixture
             $microPost = new MicroPost();
             $microPost->setText('Some random text' . rand(0, 100));
             $microPost->setTime(new \DateTime('2018-03-15'));
+            $microPost->setUser($this->getReference('john_doe'));
             $manager->persist($microPost);
         }
 
@@ -50,6 +52,8 @@ class AppFixtures extends Fixture
                 'john123'
             )
         );
+
+        $this->addReference('john_doe', $user);
 
         $manager->persist($user);
         $manager->flush();
