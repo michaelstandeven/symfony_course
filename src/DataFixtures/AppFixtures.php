@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: mstandeven
- * Date: 7/30/2018
- * Time: 2:42 PM
- */
 
 namespace App\DataFixtures;
-
 
 use App\Entity\MicroPost;
 use App\Entity\User;
