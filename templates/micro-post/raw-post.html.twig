@@ -6,7 +6,7 @@
             <a href="{{ path('micro_post_user', {'username': post.user.username}) }}">
                 <strong class="text-gray-dark">@{{ post.user.username }}</strong>
             </a>
-            <small>· {{ post.time|date("d/m/y") }}</small></span>
-        <a href="{{ path('micro_post_post', {'id': post.id}) }}">{{ post.text }}</a>
+            <small>· {{ post.time|date("d/m/Y") }}</small></span>
+        <a href="{{ path('micro_post_post', {'id': post.id }) }}">{{ post.text }}</a>
     </p>
 </div>

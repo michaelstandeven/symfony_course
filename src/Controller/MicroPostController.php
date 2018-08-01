@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 use App\Entity\MicroPost;
@@ -53,11 +54,20 @@ class MicroPostController
      */
     private $authorizationChecker;
 
+    /**
+     * @param \Twig_Environment $twig
+     * @param MicroPostRepository $microPostRepository
+     * @param FormFactoryInterface $formFactory
+     * @param EntityManagerInterface $entityManager
+     * @param RouterInterface $router
+     */
     public function __construct(
         \Twig_Environment $twig, MicroPostRepository $microPostRepository,
-        FormFactoryInterface $formFactory, EntityManagerInterface $entityManager, RouterInterface $router,
-        FlashBagInterface $flashBag, AuthorizationCheckerInterface $authorizationChecker
-    ){
+        FormFactoryInterface $formFactory,
+        EntityManagerInterface $entityManager, RouterInterface $router,
+        FlashBagInterface $flashBag,
+        AuthorizationCheckerInterface $authorizationChecker
+    ) {
         $this->twig = $twig;
         $this->microPostRepository = $microPostRepository;
         $this->formFactory = $formFactory;
@@ -66,15 +76,32 @@ class MicroPostController
         $this->flashBag = $flashBag;
         $this->authorizationChecker = $authorizationChecker;
     }
+
     /**
      * @Route("/", name="micro_post_index")
      */
-    public function index()
-    {
+    public function index(
+        TokenStorageInterface $tokenStorage
+    ) {
+        $currentUser = $tokenStorage->getToken()
+            ->getUser();
+
+        if ($currentUser instanceof User) {
+            $posts = $this->microPostRepository->findAllByUsers(
+                $currentUser->getFollowing()
+            );
+
+        } else {
+            $posts = $this->microPostRepository->findBy(
+                [],
+                ['time' => 'DESC']
+            );
+        }
+
         $html = $this->twig->render(
             'micro-post/index.html.twig',
             [
-                'posts' => $this->microPostRepository->findBy([], ['time' => 'DESC']),
+                'posts' => $posts,
             ]
         );
 
@@ -87,11 +114,11 @@ class MicroPostController
      */
     public function edit(MicroPost $microPost, Request $request)
     {
-//        $this->denyUnlessGranted('edit', $microPost);
+        //        $this->denyUnlessGranted('edit', $microPost);
 
-//        if (!$this->authorizationChecker->isGranted('edit', $microPost)) {
-//            throw new UnauthorizedHttpException();
-//        }
+        //        if (!$this->authorizationChecker->isGranted('edit', $microPost)) {
+        //            throw new UnauthorizedHttpException();
+        //        }
 
         $form = $this->formFactory->create(
             MicroPostType::class,
@@ -124,7 +151,10 @@ class MicroPostController
         $this->entityManager->remove($microPost);
         $this->entityManager->flush();
 
-        $this->flashBag->add('notice', 'Micro post was deleted');
+        $this->flashBag->add(
+            'notice',
+            'Micro post was deleted'
+        );
 
         return new RedirectResponse(
             $this->router->generate('micro_post_index')
@@ -137,10 +167,11 @@ class MicroPostController
      */
     public function add(Request $request, TokenStorageInterface $tokenStorage)
     {
-        $user = $tokenStorage->getToken()->getUser();
+        $user = $tokenStorage->getToken()
+            ->getUser();
 
         $microPost = new MicroPost();
-//        $microPost->setTime(new \DateTime());
+        //        $microPost->setTime(new \DateTime());
         $microPost->setUser($user);
 
         $form = $this->formFactory->create(
@@ -157,6 +188,7 @@ class MicroPostController
                 $this->router->generate('micro_post_index')
             );
         }
+
         return new Response(
             $this->twig->render(
                 'micro-post/add.html.twig',
@@ -178,7 +210,7 @@ class MicroPostController
                     ['time' => 'DESC']
                 ),
                 'user' => $userWithPosts,
- //               'posts' => $userWithPosts->getPosts()
+                //                'posts' => $userWithPosts->getPosts()
             ]
         );
 
@@ -194,7 +226,7 @@ class MicroPostController
             $this->twig->render(
                 'micro-post/post.html.twig',
                 [
-                    'post' => $post
+                    'post' => $post,
                 ]
             )
         );

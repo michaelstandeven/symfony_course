@@ -128,12 +128,14 @@ class User implements UserInterface, \Serializable
 
     public function serialize()
     {
-        return serialize([
-           $this->id,
-           $this->username,
-           $this->password
-            #,$this->enabled
-        ]);
+        return serialize(
+            [
+               $this->id,
+               $this->username,
+               $this->password
+                #,$this->enabled
+            ]
+      );
     }
 
     public function unserialize($serialized)

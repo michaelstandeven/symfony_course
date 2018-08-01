@@ -6,11 +6,11 @@
             <div class="card-body">
                 <h5 class="card-title">
                     {{ user.fullName }}
-                        <small class="text-muted">· @{{ user.username }}</small>
+                    <small class="text-muted">· @{{ user.username }}</small>
                 </h5>
 
                 {% if is_granted('ROLE_USER') and user != app.user %}
-                    {%  if user.followers.contains(app.user) == false %}
+                    {% if user.followers.contains(app.user) == false %}
                         <a href="{{ path('following_follow', {'id': user.id}) }}"
                            class="btn btn-outline-primary">Follow</a>
                     {% else %}
@@ -57,6 +57,7 @@
 
     {% for post in posts %}
         {{ include('micro-post/raw-post.html.twig', { 'post': post }) }}
+
         <small class="d-block text-right mt-3">
             {% if is_granted('edit', post) %}
                 <a href="{{ path('micro_post_edit', {'id': post.id}) }}">Edit</a>
