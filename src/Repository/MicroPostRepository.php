@@ -25,6 +25,7 @@ class MicroPostRepository extends ServiceEntityRepository
 
     public function findAllByUsers(Collection $users)
     {
+        //dump($users);die;
         $qb = $this->createQueryBuilder('p');
 
         return $qb->select('p')
