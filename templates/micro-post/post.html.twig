@@ -2,4 +2,6 @@
 
 {% block body %}
     {{ include('micro-post/raw-post.html.twig', { 'post': post }) }}
+
+    {% set isLiked = post.getLikedBy.conntains(app.user) %}
 {% endblock %}
