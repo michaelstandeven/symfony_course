@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: mstandeven
- * Date: 8/1/2018
- * Time: 5:24 PM
- */
 
 namespace App\Controller;
 
@@ -29,12 +23,13 @@ class NotificationController extends Controller
     {
         $this->notificationRepository = $notificationRepository;
     }
+
     /**
-     * @Route("/unread-count", name=notification_unread")
+     * @Route("/unread-count", name="notification_unread")
      */
     public function unreadCount()
     {
-        new JsonResponse([
+        return new JsonResponse([
             'count' => $this->notificationRepository->findUnseenByUser($this->getUser())
         ]);
     }
